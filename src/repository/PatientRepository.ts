@@ -1,5 +1,5 @@
 import PatientModel from '../database/models/patientModel';
-import { IPatient, IPatientModel } from '../protocols';
+import { IPatient, IPatientModel, IData } from '../protocols';
 
 export default class PatientRepository implements IPatientModel {
 
@@ -7,13 +7,13 @@ export default class PatientRepository implements IPatientModel {
     this.model = model;
   }
 
-  async getByDate(payload: object): Promise<IPatient[]> {
-    const result = await this.model.findAll(payload);
+  async getAll(data: IData): Promise<IPatient[]> {
+    const result = await this.model.findAll(data);
     return result as IPatient[];
   }
 
-  async create(payload: object): Promise<IPatient> {
-    const result = await this.model.create({ ...payload });
+  async create(patient: IPatient): Promise<IPatient> {
+    const result = await this.model.create({ patient });
     return result as IPatient;
   }
 }
