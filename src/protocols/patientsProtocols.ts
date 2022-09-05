@@ -8,12 +8,24 @@ export interface IPatient {
   installments?: [IInstallment]
 }
 
+export interface IDate {
+  month: string,
+  year: string
+}
+
+export interface IData {
+  where?: {},
+  include?: [{}] | {}
+}
+
+
 export interface IPatientModel {
-  getByDate(data: object): Promise<IPatient[]>
-  create(data: object): Promise<IPatient>
+  getAll(data: IData): Promise<IPatient[]>
+  create(patient: IPatient): Promise<IPatient>
 }
 
 export interface IPatientService {
-  findByDate(data: object): Promise<IPatient[]>
-  create(data: object): Promise<IPatient>
+  getAll(): Promise<IPatient[]>
+  create(patient: IPatient, installments: number): Promise<IPatient>
 }
+

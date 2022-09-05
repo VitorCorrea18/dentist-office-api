@@ -1,4 +1,4 @@
-import { IPatient, IPatientModel, IPatientService } from './patientsProtocols';
+import { IPatient, IPatientModel, IPatientService, IDate, IData } from './patientsProtocols';
 import { ITreatment, ITreatmentModel, ITreatmentService } from './treatmentsProtocols';
 import { IInstallment, IInstallmentModel } from './installmentsProtocols';
 
@@ -11,5 +11,7 @@ export {
   ITreatmentService,
   IInstallment,
   IInstallmentModel,
+  IDate,
+  IData,
 };
 
