@@ -1,6 +1,6 @@
 import { IPatient, IPatientModel, IPatientService } from './patientsProtocols';
 import { ITreatment, ITreatmentModel, ITreatmentService } from './treatmentsProtocols';
-import { IInstallment, IInstallmentModel, IInstallmentService } from './installmentsProtocols';
+import { IInstallment, IInstallmentModel } from './installmentsProtocols';
 
 export {
   IPatient,
@@ -11,6 +11,5 @@ export {
   ITreatmentService,
   IInstallment,
   IInstallmentModel,
-  IInstallmentService
 };
 
