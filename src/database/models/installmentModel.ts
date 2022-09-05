@@ -1,9 +1,8 @@
-
 import { DataTypes, Model } from 'sequelize';
 import db from '.';
 import PatientModel from './patientModel';
 
-class InstallmentModel extends Model {
+export default class InstallmentModel extends Model {
   public id: number;
   public name: string;
   public treatmentId: number;
@@ -35,8 +34,3 @@ InstallmentModel.init({
   timestamps: false,
 });
 
-PatientModel.hasMany(InstallmentModel, { foreignKey: 'patientId', as: 'patient' });
-
-InstallmentModel.belongsTo(PatientModel, { foreignKey: 'patientId', as: 'patient' });
-
-export default InstallmentModel;
