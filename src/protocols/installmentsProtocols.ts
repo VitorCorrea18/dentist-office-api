@@ -10,3 +10,7 @@ export interface IInstallmentModel {
   update(payload: object, data: object): Promise<void>
 }
 
+export interface IInstallmentService {
+  update(id: number): Promise<void>
+}
+
