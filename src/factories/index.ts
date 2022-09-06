@@ -1,2 +1,2 @@
 export { default as patientFactory } from './patientFactory';
-export default {} // lint
+export { default as treatmentFactory } from './treatmentFactory';
