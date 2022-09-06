@@ -47,7 +47,7 @@ TreatmentModel.hasMany(PatientModel, {
 });
 
 InstallmentModel.belongsTo(PatientModel, {
-  foreignKey: 'treatmentId',
+  foreignKey: 'patientId',
   as: 'patient'
 });
 
