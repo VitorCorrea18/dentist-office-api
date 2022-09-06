@@ -6,8 +6,9 @@ export default class InstallmentRepository implements IInstallmentModel {
     this.model = model;
   }
 
-  async create(data: object): Promise<void> {
-    await this.model.create({ ...data });
+  async create(data: object): Promise<IInstallment> {
+    const result = await this.model.create({ ...data });
+    return result as unknown as IInstallment;
   }
 
   async update(payload: object, data: { where: {} }): Promise<void> {
