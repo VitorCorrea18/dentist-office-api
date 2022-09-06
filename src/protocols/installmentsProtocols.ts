@@ -6,7 +6,7 @@ export interface IInstallment {
 }
 
 export interface IInstallmentModel {
-  create(data: object): Promise<void>
+  create(data: object): Promise<IInstallment>
   update(payload: object, data: object): Promise<void>
 }
 
