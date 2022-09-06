@@ -5,7 +5,8 @@ export interface IPatient {
   name: string,
   treatmentId?: number,
   treatment?: string,
-  installments?: [IInstallment]
+  installments?: IInstallment[]
+  dataValues?: {}
 }
 
 export interface IDate {
@@ -22,10 +23,12 @@ export interface IData {
 export interface IPatientModel {
   getAll(data: IData): Promise<IPatient[]>
   create(patient: IPatient): Promise<IPatient>
+  getById(data: IData): Promise<IPatient>
 }
 
 export interface IPatientService {
   getAll(): Promise<IPatient[]>
   create(patient: IPatient, installments: number): Promise<IPatient>
+  getById(id: number): Promise<IPatient>
 }
 
