@@ -1,2 +1,2 @@
 export { default as PatientController } from './PatientController';
-export default {};
+export { default as TreatmentController } from './TreatmentController';
