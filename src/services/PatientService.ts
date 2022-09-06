@@ -1,7 +1,7 @@
 import { IPatient, IPatientService, IPatientModel, IInstallmentModel } from '../protocols';
 // import PatientModel from '../database/models/patientModel';
 import TreatmentModel from '../database/models/treatmentModel';
-// import InstallmentModel from '../database/models/installmentModel';
+import InstallmentModel from '../database/models/installmentModel';
 
 export default class PatientServices implements IPatientService {
   constructor(private patientModel: IPatientModel, private installmentModel: IInstallmentModel) {
@@ -11,10 +11,20 @@ export default class PatientServices implements IPatientService {
 
   async getAll(): Promise<IPatient[]> {
     const result = await this.patientModel.getAll({
-      include: { model: TreatmentModel, as: 'treatment' }
-    }).catch(function(err) {
-      console.log(err)
+      include: [
+        {
+          model: TreatmentModel,
+          as: 'treatment',
+          attributes: { exclude: ['id'] }
+        },
+        {
+          model: InstallmentModel,
+          as: 'installments',
+          attributes: { exclude: ['patientId'] }
+        },
+      ]
     });
+
     return result as IPatient[];
   }
 
