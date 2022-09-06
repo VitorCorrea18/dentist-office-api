@@ -1,2 +1,2 @@
 export { default as PatientService } from './PatientService';
-export default {} // lint
+export { default as TreatmentService } from './TreatmentService';
