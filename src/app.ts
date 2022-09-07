@@ -1,5 +1,5 @@
 import * as express from 'express';
-import { patientRouter, treatmentRouter } from './routes';
+import { patientRouter, treatmentRouter, installmentRouter } from './routes';
 
 class App {
   public app: express.Express;
@@ -23,6 +23,7 @@ class App {
     this.app.use(accessControl);
     this.app.use('/patients', patientRouter);
     this.app.use('/treatments', treatmentRouter);
+    this.app.use('/installments', installmentRouter);
 
     // this.app.use(errorHandler);
   }
@@ -34,5 +35,3 @@ class App {
 
 export { App };
 
-// A execução dos testes de cobertura depende dessa exportação
-export const { app } = new App();
