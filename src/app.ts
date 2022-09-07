@@ -1,5 +1,6 @@
 import * as express from 'express';
 import { patientRouter, treatmentRouter, installmentRouter } from './routes';
+import { errorHandler } from './middlewares';
 
 class App {
   public app: express.Express;
@@ -25,7 +26,7 @@ class App {
     this.app.use('/treatments', treatmentRouter);
     this.app.use('/installments', installmentRouter);
 
-    // this.app.use(errorHandler);
+    this.app.use(errorHandler);
   }
 
   public start(PORT: string | number): void {
