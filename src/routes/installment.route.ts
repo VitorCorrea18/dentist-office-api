@@ -5,7 +5,7 @@ import { installmentFactory } from '../factories';
 const controller = installmentFactory();
 const router = express.Router();
 
-router.put('/', (req, res, next) => {
+router.put('/:installmentId', (req, res, next) => {
   controller.update(req, res, next);
 });
 

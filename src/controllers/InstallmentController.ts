@@ -7,9 +7,9 @@ export default class InstallmentController {
   }
 
   async update(req: Request, res: Response, next: NextFunction) {
-    const { installmentId } = req.body;
+    const { installmentId } = req.params;
     try {
-      await this.service.update(installmentId);
+      await this.service.update(Number(installmentId));
       return res.status(200).end();
     } catch (err) {
       next(err);
