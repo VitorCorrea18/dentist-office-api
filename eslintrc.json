@@ -12,9 +12,13 @@
     "plugin:mocha/recommended",
     "airbnb-typescript/base"
   ],
-  "parser": "@typescript-eslint/parser",
+  "parser": "babel-eslint",
   "parserOptions": {
     "ecmaVersion": 2019,
+    "ecmaFeatures": {
+      "jsx": true,
+      "modules": true
+    },
     "sourceType": "module",
     "project": "./tsconfig.json"
   },
@@ -38,13 +42,17 @@
     "implicit-arrow-linebreak": "off",
     "consistent-return": "off",
     "@typescript-eslint/naming-convention": [
-      "error", { 
+      "error",
+      {
         "selector": "property",
-        "format": ["strictCamelCase"],
+        "format": [
+          "strictCamelCase"
+        ],
         "filter": {
-        "regex": "^_",
-        "match": false
-      } }
+          "regex": "^_",
+          "match": false
+        }
+      }
     ],
     "@typescript-eslint/no-unused-vars": [
       "error",
@@ -53,7 +61,13 @@
         "ignoreRestSiblings": true
       }
     ],
-    "@typescript-eslint/lines-between-class-members": ["error", "always", { "exceptAfterSingleLine": true }],
+    "@typescript-eslint/lines-between-class-members": [
+      "error",
+      "always",
+      {
+        "exceptAfterSingleLine": true
+      }
+    ],
     "no-unused-vars": [
       "error",
       {

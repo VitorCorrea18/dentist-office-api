@@ -1,8 +1,9 @@
 import { DataTypes, Model } from 'sequelize';
 import db from '.';
 import TreatmentModel from './treatmentModel';
+import InstallmentModel from './installmentModel';
 
-class PatientModel extends Model {
+export default class PatientModel extends Model {
   public id: number;
   public name: string;
   public treatmentId: number;
@@ -30,6 +31,25 @@ PatientModel.init({
   timestamps: false,
 });
 
-PatientModel.hasOne(TreatmentModel, { foreignKey: 'treatmentId', as: 'treatmentId' });
+PatientModel.belongsTo(TreatmentModel, {
+  foreignKey: 'treatmentId',
+  as: 'treatment'
+});
 
-export default PatientModel;
+PatientModel.hasMany(InstallmentModel, {
+  foreignKey: 'patientId',
+  as: 'installments'
+});
+
+TreatmentModel.hasMany(PatientModel, {
+  foreignKey: 'treatmentId',
+  as: 'patients'
+});
+
+InstallmentModel.belongsTo(PatientModel, {
+  foreignKey: 'patientId',
+  as: 'patient'
+});
+
+
+

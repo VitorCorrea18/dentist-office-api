@@ -1,8 +1,7 @@
-
 import { DataTypes, Model } from 'sequelize';
 import db from '.';
 
-class TreatmentModel extends Model {
+export default class TreatmentModel extends Model {
   public id: number;
   public name: string;
   public price: number;
@@ -29,5 +28,3 @@ TreatmentModel.init({
   modelName: 'treatment',
   timestamps: false,
 });
-
-export default TreatmentModel; 

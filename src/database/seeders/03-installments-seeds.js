@@ -2,7 +2,7 @@
 module.exports = {
   up: async (queryInterface) => {
     await queryInterface.bulkInsert(
-      'Installments',
+      'installments',
       [
         {
           date: '2021-05-12',
@@ -1038,6 +1038,6 @@ module.exports = {
   },
 
   down: async (queryInterface) => {
-    await queryInterface.bulkDelete('Installments', null, {});
+    await queryInterface.bulkDelete('installments', null, {});
   },
 };

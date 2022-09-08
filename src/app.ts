@@ -1,4 +1,6 @@
 import * as express from 'express';
+import { patientRouter, treatmentRouter, installmentRouter } from './routes';
+import { errorHandler } from './middlewares';
 
 class App {
   public app: express.Express;
@@ -20,8 +22,11 @@ class App {
 
     this.app.use(express.json());
     this.app.use(accessControl);
+    this.app.use('/patients', patientRouter);
+    this.app.use('/treatments', treatmentRouter);
+    this.app.use('/installments', installmentRouter);
 
-    // this.app.use(errorHandler);
+    this.app.use(errorHandler);
   }
 
   public start(PORT: string | number): void {
@@ -31,5 +36,3 @@ class App {
 
 export { App };
 
-// A execução dos testes de cobertura depende dessa exportação
-export const { app } = new App();
