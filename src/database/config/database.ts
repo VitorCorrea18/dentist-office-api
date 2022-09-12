@@ -2,11 +2,11 @@ import 'dotenv/config';
 import { Options } from 'sequelize';
 
 const config: Options = {
-  username: process.env.DB_USER || 'postgres',
-  password: process.env.DB_PASS || 'Softeo#2022',
+  username: process.env.DB_USER || 'root',
+  password: process.env.DB_PASS || '123456',
   database: 'DENTIST_OFFICE',
-  host: process.env.DB_URL || 'db.rcwhkbqjmjckfkdexrlj.supabase.co',
-  port: Number(process.env.DB_PORT) || 5432,
+  host: process.env.DB_URL || 'localhost',
+  port: Number(process.env.DB_PORT) || 3001,
   dialect: 'postgres',
   dialectOptions: {
     timezone: 'Z',
