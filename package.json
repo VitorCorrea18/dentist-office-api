@@ -12,12 +12,15 @@
     "start": "node .",
     "predev": "npm run build && npm run db:reset",
     "dev": "nodemon --watch \"./src/**\" ./src/server.ts",
-    "postinstall": "if [ ! -z 'cat ./packages.npm' ]; then npm i --ignore-scripts $(cat ./packages.npm); fi",
     "lint": "eslint ./src --ext .ts"
   },
   "keywords": [],
   "author": "vitorcorrea18",
   "license": "ISC",
+  "engines": {
+    "node": "16.14.2",
+    "npm": "8.5.0"
+  },
   "devDependencies": {
     "@babel/core": "^7.18.13",
     "@babel/eslint-parser": "^7.18.9",
@@ -44,6 +47,8 @@
     "joi": "^17.6.0",
     "mysql2": "^2.3.3",
     "nodemon": "^2.0.19",
+    "pg": "^8.8.0",
+    "pg-hstore": "^2.3.4",
     "sequelize": "^6.21.4"
   }
 }
