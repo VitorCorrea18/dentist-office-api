@@ -1,0 +1,29 @@
+{
+  "development": {
+    "username": "root",
+    "password": "123456",
+    "database": "DRA_ERICA_DB",
+    "host": "localhost",
+    "dialect": "mysql",
+    "protocol": "mysql",
+    "port": "3606"
+  },
+  "staging": {
+    "username": "dbusername",
+    "password": "dbpassword",
+    "database": "db",
+    "host": "host",
+    "dialect": "postgres",
+    "protocol": "postgres",
+    "port": "xxxx"
+  },
+  "production": {
+    "username": "b290e0b84085cf",
+    "password": "82a77c51",
+    "database": "DRA_ERICA_DB",
+    "host": "us-cdbr-east-06.cleardb.net",
+    "dialect": "mysql",
+    "protocol": "mysql",
+    "port": "3306"
+  }
+}
