@@ -6,8 +6,8 @@ const config: Options = {
   password: process.env.DB_PASS || '123456',
   database: 'DENTIST_OFFICE',
   host: process.env.DB_URL || 'localhost',
-  port: Number(process.env.DB_PORT) || 3001,
-  dialect: 'postgres',
+  port: Number(process.env.DB_PORT) || 3002,
+  dialect: 'mysql',
   dialectOptions: {
     timezone: 'Z',
   },
