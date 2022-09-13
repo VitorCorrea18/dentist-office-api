@@ -49,13 +49,6 @@ git clone git@github.com:VitorCorrea18/softeo-backend.git
     ```bash
     npm install
     ```
-   
-  Create a **.env** file in the app's root directory with the variables for your Mysql server connection. EX:
-  ```bash
-  MYSQL_HOST = 127.0.0.1 || localhost
-  MYSQL_USER = root
-  MYSQL_PASSWORD = 123456
-  ```
    Start the application with
   ```bash
   npm start
