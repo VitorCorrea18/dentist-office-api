@@ -1,6 +1,6 @@
 # Dentist Office API
 
-This project was developed as a technical challenge, the only goal here is to show my knowledge and of course to have
+This project was developed as a technical challenge, the only goal here is to challenge myself, learn more, and of course to have
 some fun while doing it. < Érica is a ficticional dentist! > <br>
 This API was developed to feed the front end APP [Dentist Office APP](https://github.com/VitorCorrea18/softeo-frontend)
 
